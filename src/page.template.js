@@ -1,4 +1,4 @@
-const generateTeam = (team) => {
+
   const generateManager = (manager) => {
     return ` <div class="card" >
         <div class="card-header">
@@ -46,9 +46,14 @@ const generateTeam = (team) => {
     </div>
     </div>   `;
   };
-};
 
 module.exports = (team) => {
+
+  /// split up team
+  const manager = team.manager;
+  const engineers = team.engineers;
+  const interns = team.interns;
+
   return ` <!DOCTYPE html>
     <html lang="en">
     
@@ -56,7 +61,7 @@ module.exports = (team) => {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Portfolio Demo</title>
+      <title>Team builder</title>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
       <link href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap" rel="stylesheet">
@@ -74,7 +79,9 @@ module.exports = (team) => {
       <div class="container">
         <div class="row">
             <div class="col-12 d-flex justify-content-center">
-                ${generateTeam(team)}
+                ${generateManager(manager)}
+                ${engineers.forEach( engineer => generateEngineer(engineer))}
+                ${interns.forEach( intern => generateIntern(intern))}
             </div>
         </div>
       </div>
