@@ -6,7 +6,7 @@ test ('Does this create an object', () => {
     expect(typeof(employee)).toBe('object');
 });
 
-
+// break up this test
 test ('create a employee name, id, email', () => {
     const employee = new Employee('Bob', 1, 'test@test.com');
 
