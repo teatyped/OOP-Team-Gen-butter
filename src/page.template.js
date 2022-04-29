@@ -2,7 +2,7 @@ const generateTeam = (team) => {
   const generateManager = (manager) => {
     return ` <div class="card" >
         <div class="card-header">
-            <h2 class="card-title">${manager.getName()}</h2>
+            <h2 class="card-title text-capitalize">${manager.getName()}</h2>
             <h3 class="card-title"> <span class="oi oi-briefcase"></span>${manager.getRole()}</h3>   
         </div>
         <div class="card-body">
@@ -21,8 +21,8 @@ const generateTeam = (team) => {
     }
     return ` <div class="card" >
         <div class="card-header">
-            <h2 class="card-title">${engineer.getName()}</h2>
-            <h3 class="card-title"> <span class="oi oi-briefcase"></span></i>${engineer.getRole()}</h3>   
+            <h2 class="card-title text-capitalize">${engineer.getName()}</h2>
+            <h3 class="card-title"> <span class="oi oi-briefcase"></span> ${engineer.getRole()}</h3>   
         </div>
         <div class="card-body">
             <ul class="list-group">
@@ -40,7 +40,7 @@ const generateTeam = (team) => {
     }
     return ` <div class="card" >
     <div class="card-header">
-        <h2 class="card-title">${intern.getName()}</h2>
+        <h2 class="card-title text-capitalize">${intern.getName()}</h2>
         <h3 class="card-title"> <span class="oi oi-calculator"></span>${intern.getRole()}</h3>   
     </div>
     <div class="card-body">

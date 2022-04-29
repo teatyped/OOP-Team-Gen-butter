@@ -1,28 +1,29 @@
 .card{
-  width: 40vw;
-  min-width: 30vw;
-  margin: 15px;
-  background-color: #C7BEA2;
-}
-
-.card-header{
-  background-color: #AAA492;
-}
-
-.card-title{
-  text-align: center;
-}
-
-.jumbotron{
-  text-align: center;
-  background-color: #AAA492;
-
-}
-
-body{
-  background-color: #E5DCC3;
-}
-
-.oi{
-  color: black;
-}
+    width: 40vw;
+    min-width: 30vw;
+    margin: 15px;
+    background-color: #C7BEA2;
+  }
+  
+  .card-header{
+    background-color: #AAA492;
+  }
+  
+  .card-title{
+    text-align: center;
+  }
+  
+  .jumbotron{
+    text-align: center;
+    background-color: #AAA492;
+  
+  }
+  
+  body{
+    background-color: #E5DCC3;
+  }
+  
+  .oi{
+    color: black;
+    background-color: blanchedalmond;
+  }
