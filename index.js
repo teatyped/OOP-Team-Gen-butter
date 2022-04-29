@@ -97,7 +97,7 @@ function createHTML() {
           console.log('Success! The HTML file for your team has been created!');
       }
   });
-  fs.copyFile('./src/style.css', './dist/team.html', (error) => {
+  fs.copyFile('./src/style.css', './dist/style.css', (error) => {
       if (error) {
           console.log(error);
           return;
