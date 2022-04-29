@@ -46,7 +46,7 @@ const generateTeam = (team) => {
     <div class="card-body">
         <ul class="list-group">
             <li class="list-group-item">ID: ${intern.getId()}</li>
-            <li class="list-group-item">EMAIL: ${intern.getEmail()}</li>
+            <li class="list-group-item">EMAIL: <a href="mailto:${intern.getEmail()}"> ${intern.getEmail()}</a></li>
             <li class="list-group-item">SCHOOL: ${intern.getSchool()}</li>
         </ul>
     </div>
