@@ -4,8 +4,6 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const generateTeam = require("./src/page.template.js");
-const { writeFile, copyFile } = require("./utils/genrate-site");
-const roles = { Manager: [], Engineer: [], Intern: [] };
 const teamArr = [];
 
 init();
@@ -120,11 +118,6 @@ function fillRole() {
           },
         ])
         .then((ans) => {
-          // role == "Manager"
-          //   ? teamArr.push(new Manager(ans.name, ans.id, ans.email, ans.officeNumber))
-          //   : role == "Engineer"
-          //   ? roles.Engineer.push(new Engineer(...Object.values(ans)))
-          //   : roles.Intern.push(new Intern(...Object.values(ans)));
           if (role == "Manager") {
             const manager = new Manager(
               ans.name,
