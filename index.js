@@ -6,10 +6,8 @@ const Intern = require("./lib/Intern");
 const generateTeam = require("./src/page.template.js");
 const { writeFile, copyFile } = require("./utils/genrate-site");
 const roles = { Manager: [], Engineer: [], Intern: [] };
+const teamArr = [];
 
-// toDo
-// - promp user for emplyee info
-// - base on employee role call that role generate function
 
 init();
 
@@ -21,7 +19,7 @@ function init() {
       message: "Would you like to fill a position?",
     },
   ]).then(({ isRole }) => {
-    isRole ? fillRole() : createHTML(roles);
+    isRole ? fillRole() : createHTML();
   });
 }
 
@@ -70,26 +68,36 @@ function fillRole() {
       },
     ])
       .then((ans) => {
-        role == "Manager"
-          ? roles.Manager.push(new Manager(...Object.values(ans)))
-          : role == "Engineer"
-          ? roles.Engineer.push(new Engineer(...Object.values(ans)))
-          : roles.Intern.push(new Intern(...Object.values(ans)));
+        // role == "Manager"
+        //   ? teamArr.push(new Manager(ans.name, ans.id, ans.email, ans.officeNumber))
+        //   : role == "Engineer"
+        //   ? roles.Engineer.push(new Engineer(...Object.values(ans)))
+        //   : roles.Intern.push(new Intern(...Object.values(ans)));
+        if (role == "Manager"){
+          console.log(ans)// testing 
+          const manager = new Manager(ans.name, ans.id, ans.email, ans.officeNumber)
+          teamArr.push(manager);
+          console.log(teamArr);
+        } else if (role == "Engineer"){
+          const engineer = new Engineer(ans.name, ans.id, ans.email, ans.github)
+          teamArr.push(engineer);
+        } else {
+          const intern = new Intern(ans.name, ans.id, ans.email, ans.school)
+          teamArr.push(intern);
+        }
       })
       .then(init);
   });
 }
 
-function createHTML(roles) {
+function createHTML() {
 
- const { Manager, Engineer, Intern} = roles;
-
- console.log(Manager);
- console.log(Manager.getRole());
+ console.log(generateTeam(teamArr));
 
   
 
 }
+
 
 
 

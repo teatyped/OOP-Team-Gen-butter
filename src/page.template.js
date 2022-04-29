@@ -1,11 +1,7 @@
-const manager = require('../lib/Manager');
-const engineer = require('../lib/Engineer');
-const intern = require('../lib/Intern');
 
-
+const generateTeam = team => {
 
   const generateManager = (manager) => {
-   
     return ` <div class="card" >
         <div class="card-header">
             <h2 class="card-title">${manager.getName()}</h2>
@@ -59,13 +55,31 @@ const intern = require('../lib/Intern');
     </div>   `;
   };
 
-module.exports = (team) => {
+  const html = [];
 
-  /// split up team
-  const manager = team.manager;
-  const engineers = team.engineers; // arrays
-  const interns = team.interns;
+    html.push(team
+        .filter(employee => employee.getRole() === "Manager")
+        .map(manager => generateManager(manager))
+    );
+    html.push(team
+        .filter(employee => employee.getRole() === "Engineer")
+        .map(engineer => generateEngineer(engineer))
+        .join("")
+    );
+    html.push(team
+        .filter(employee => employee.getRole() === "Intern")
+        .map(intern => generateIntern(intern))
+        .join("")
+    );
 
+    return html.join("");
+
+}
+
+  
+module.exports = team => {
+
+  
   return ` <!DOCTYPE html>
     <html lang="en">
     
@@ -91,8 +105,7 @@ module.exports = (team) => {
       <div class="container">
         <div class="row">
             <div class="col-12 d-flex justify-content-center">
-                ${generateManager(manager)}
-               
+                ${generateTeam(team)}
             </div>
         </div>
       </div>
