@@ -8,7 +8,7 @@ Node.js command-line application that takes in information about employees on a 
 
 ![Screenshot](Media/OOP-TEAM.png)
 
-
+https://user-images.githubusercontent.com/96491122/166076478-29d5b9d4-45f2-41dd-ad15-84164521a190.mp4
 
 
 ## Scope of project
