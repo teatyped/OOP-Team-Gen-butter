@@ -1,6 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateTeam = require('./src/page.template.js');
+const { writeFile, copyFile } = require('./utils/generate-site');
 
 // toDo 
 // - promp user for emplyee info

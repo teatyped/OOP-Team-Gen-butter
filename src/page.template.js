@@ -51,7 +51,7 @@ module.exports = (team) => {
 
   /// split up team
   const manager = team.manager;
-  const engineers = team.engineers;
+  const engineers = team.engineers; // arrays
   const interns = team.interns;
 
   return ` <!DOCTYPE html>
