@@ -1,5 +1,11 @@
+const manager = require('../lib/Manager');
+const engineer = require('../lib/Engineer');
+const intern = require('../lib/Intern');
+
+
 
   const generateManager = (manager) => {
+   
     return ` <div class="card" >
         <div class="card-header">
             <h2 class="card-title">${manager.getName()}</h2>
@@ -16,6 +22,9 @@
   };
 
   const generateEngineer = (engineer) => {
+    if(!engineer){
+      return '';
+    }
     return ` <div class="card" >
         <div class="card-header">
             <h2 class="card-title">${engineer.getName()}</h2>
@@ -32,6 +41,9 @@
   };
 
   const generateIntern = (intern) => {
+    if(!intern){
+      return '';
+    }
     return ` <div class="card" >
     <div class="card-header">
         <h2 class="card-title">${intern.getName()}</h2>
@@ -80,8 +92,7 @@ module.exports = (team) => {
         <div class="row">
             <div class="col-12 d-flex justify-content-center">
                 ${generateManager(manager)}
-                ${engineers.forEach( engineer => generateEngineer(engineer))}
-                ${interns.forEach( intern => generateIntern(intern))}
+               
             </div>
         </div>
       </div>
@@ -92,3 +103,7 @@ module.exports = (team) => {
     </html>
     `;
 };
+
+
+// ${engineers.forEach( engineer => generateEngineer(engineer))}
+// ${interns.forEach( intern => generateIntern(intern))}
