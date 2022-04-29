@@ -74,10 +74,8 @@ function fillRole() {
         //   ? roles.Engineer.push(new Engineer(...Object.values(ans)))
         //   : roles.Intern.push(new Intern(...Object.values(ans)));
         if (role == "Manager"){
-          console.log(ans)// testing 
           const manager = new Manager(ans.name, ans.id, ans.email, ans.officeNumber)
           teamArr.push(manager);
-          console.log(teamArr);
         } else if (role == "Engineer"){
           const engineer = new Engineer(ans.name, ans.id, ans.email, ans.github)
           teamArr.push(engineer);
@@ -91,16 +89,24 @@ function fillRole() {
 }
 
 function createHTML() {
-
- console.log(generateTeam(teamArr));
-
- // todo :
- // write to file
- // copy css to dist folder
- // run full test.
-  
-
+  fs.writeFile('./dist/team.html', generateTeam(teamArr), (error) => {
+      if (error) {
+          console.log(error);
+          return;
+      } else {
+          console.log('Success! The HTML file for your team has been created!');
+      }
+  });
+  fs.copyFile('./src/style.css', './dist/team.html', (error) => {
+      if (error) {
+          console.log(error);
+          return;
+      } else {
+          console.log('The CSS file for your HTML has been successfully created!');
+      }
+  });
 }
+
 
 
 
