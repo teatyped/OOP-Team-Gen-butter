@@ -94,6 +94,10 @@ function createHTML() {
 
  console.log(generateTeam(teamArr));
 
+ // todo :
+ // write to file
+ // copy css to dist folder
+ // run full test.
   
 
 }
