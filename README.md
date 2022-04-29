@@ -1,5 +1,11 @@
 # OOP-Team-Gen-butter
 ## Table of Contents
+- [Description](#description)
+- [Media](#media)
+- [Scope](#scope-of-project)
+- [Tools](#tools-used)
+- [Install](#how-to-install)
+- [Test](#how-to-test)
 
 ## Description
 Node.js command-line application that takes in information about employees on a software engineering team and generates an HTML webpage that displays summaries for each person.
