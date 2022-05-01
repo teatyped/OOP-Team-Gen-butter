@@ -32,6 +32,7 @@ https://user-images.githubusercontent.com/96491122/166076478-29d5b9d4-45f2-41dd-
 - run "npm install" in terminal
 
 ## How to test
-- run "npm start"
+- run "npm run test" ( to test the testing files )
+- run "npm start" ( to run the application )
 - follow prompts in terminal until team is built
 - html file will be generated in dist folder.
